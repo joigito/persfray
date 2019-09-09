@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @personal.documento %>
+</p>
+
+<p>
+  <strong>Apeynom:</strong>
+  <%= @personal.apeynom %>
+</p>
+
+<p>
+  <strong>Fecnac:</strong>
+  <%= @personal.fecnac %>
+</p>
+
+<p>
+  <strong>Fecing:</strong>
+  <%= @personal.fecing %>
+</p>
+
+<p>
+  <strong>Domic:</strong>
+  <%= @personal.domic %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @personal.activo %>
+</p>
+
+<%= link_to 'Edit', edit_personal_path(@personal) %> |
+<%= link_to 'Back', personals_path %>
