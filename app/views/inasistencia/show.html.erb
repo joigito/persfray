@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personal:</strong>
+  <%= @inasistencium.personal_id %>
+</p>
+
+<p>
+  <strong>Fechadesde:</strong>
+  <%= @inasistencium.fechadesde %>
+</p>
+
+<p>
+  <strong>Fechahasta:</strong>
+  <%= @inasistencium.fechahasta %>
+</p>
+
+<p>
+  <strong>Causa:</strong>
+  <%= @inasistencium.causa %>
+</p>
+
+<p>
+  <strong>Aviso:</strong>
+  <%= @inasistencium.aviso %>
+</p>
+
+<%= link_to 'Edit', edit_inasistencium_path(@inasistencium) %> |
+<%= link_to 'Back', inasistencia_path %>
