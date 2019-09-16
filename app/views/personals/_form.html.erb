@@ -12,32 +12,32 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :documento %>
+    <%= form.label :documento, 'Documento' %>
     <%= form.text_field :documento %>
   </div>
 
   <div class="field">
-    <%= form.label :apeynom %>
+    <%= form.label :apeynom, 'Apellido y nombres' %>
     <%= form.text_field :apeynom %>
   </div>
 
   <div class="field">
-    <%= form.label :fecnac %>
-    <%= form.date_select :fecnac %>
+    <%= form.label :fecnac, 'Fecha de nacimiento' %>
+    <%= form.date_select :fecnac, start_year: Date.today.year - 70, end_year: Date.today.year %>
   </div>
 
   <div class="field">
-    <%= form.label :fecing %>
-    <%= form.date_select :fecing %>
+    <%= form.label :fecing, 'Fecha de ingreso' %>
+    <%= form.date_select :fecing, start_year: Date.today.year - 45, end_year: Date.today.year %>
   </div>
 
   <div class="field">
-    <%= form.label :domic %>
+    <%= form.label :domic, 'Domicilio' %>
     <%= form.text_field :domic %>
   </div>
 
   <div class="field">
-    <%= form.label :activo %>
+    <%= form.label :activo, 'Activo' %>
     <%= form.check_box :activo %>
   </div>
 
