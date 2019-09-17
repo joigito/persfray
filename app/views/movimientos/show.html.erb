@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personal:</strong>
+  <%= @movimiento.personal_id %>
+</p>
+
+<p>
+  <strong>Fecha desde:</strong>
+  <%= @movimiento.fecha_desde %>
+</p>
+
+<p>
+  <strong>Fecha hasta:</strong>
+  <%= @movimiento.fecha_hasta %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @movimiento.motivo %>
+</p>
+
+<p>
+  <strong>Con aviso:</strong>
+  <%= @movimiento.con_aviso %>
+</p>
+
+<p>
+  <strong>Justificado:</strong>
+  <%= @movimiento.justificado %>
+</p>
+
+<%= link_to 'Edit', edit_movimiento_path(@movimiento) %> |
+<%= link_to 'Back', movimientos_path %>

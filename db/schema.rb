@@ -10,19 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_150432) do
+ActiveRecord::Schema.define(version: 2019_09_17_205544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "employes", force: :cascade do |t|
-    t.string "documento"
-    t.string "apellido_y_nombre"
-    t.string "fec_nacim"
-    t.date "fec_ingreso"
-    t.boolean "docente"
+  create_table "assistances", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.date "fecha_desde"
+    t.date "fecha_hasta"
+    t.string "movito"
+    t.boolean "con_aviso"
+    t.boolean "justificado"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_assistances_on_personal_id"
   end
 
   create_table "inasistencia", force: :cascade do |t|
@@ -36,6 +38,18 @@ ActiveRecord::Schema.define(version: 2019_09_09_150432) do
     t.index ["personal_id"], name: "index_inasistencia_on_personal_id"
   end
 
+  create_table "movimientos", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.date "fecha_desde"
+    t.date "fecha_hasta"
+    t.string "motivo"
+    t.boolean "con_aviso"
+    t.boolean "justificado"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_movimientos_on_personal_id"
+  end
+
   create_table "personals", force: :cascade do |t|
     t.string "documento"
     t.string "apeynom"
@@ -47,5 +61,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_150432) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "assistances", "personals"
   add_foreign_key "inasistencia", "personals"
+  add_foreign_key "movimientos", "personals"
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class InasistenciumTest < ActiveSupport::TestCase
+class MovimientoTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

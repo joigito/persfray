@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personal: one
+  fecha_desde: 2019-09-17
+  fecha_hasta: 2019-09-17
+  motivo: MyString
+  con_aviso: false
+  justificado: false
+
+two:
+  personal: two
+  fecha_desde: 2019-09-17
+  fecha_hasta: 2019-09-17
+  motivo: MyString
+  con_aviso: false
+  justificado: false

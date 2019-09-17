@@ -1,3 +1,3 @@
 class Personal < ApplicationRecord
-  has_many :Inasistencias
+  has_many :movimientos
 end
