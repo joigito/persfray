@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
     t.index ["personal_id"], name: "index_assistances_on_personal_id"
   end
 
+  create_table "employes", force: :cascade do |t|
+    t.string "documento"
+    t.string "apellido_y_nombre"
+    t.string "fec_nacim"
+    t.date "fec_ingreso"
+    t.boolean "docente"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "inasistencia", force: :cascade do |t|
     t.bigint "personal_id", null: false
     t.date "fechadesde"
