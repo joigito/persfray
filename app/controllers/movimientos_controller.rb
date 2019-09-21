@@ -28,7 +28,7 @@ class MovimientosController < ApplicationController
 
     respond_to do |format|
       if @movimiento.save
-        format.html { redirect_to @movimiento, notice: 'Movimiento was successfully created.' }
+        format.html { redirect_to @movimiento, notice: 'Se creó el registro con éxito.' }
         format.json { render :show, status: :created, location: @movimiento }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class MovimientosController < ApplicationController
   def update
     respond_to do |format|
       if @movimiento.update(movimiento_params)
-        format.html { redirect_to @movimiento, notice: 'Movimiento was successfully updated.' }
+        format.html { redirect_to @movimiento, notice: 'La actualización fue exitosa.' }
         format.json { render :show, status: :ok, location: @movimiento }
       else
         format.html { render :edit }

@@ -28,7 +28,7 @@ class PersonalsController < ApplicationController
 
     respond_to do |format|
       if @personal.save
-        format.html { redirect_to @personal, notice: 'Personal was successfully created.' }
+        format.html { redirect_to @personal, notice: 'Se creó el registro con éxito.' }
         format.json { render :show, status: :created, location: @personal }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PersonalsController < ApplicationController
   def update
     respond_to do |format|
       if @personal.update(personal_params)
-        format.html { redirect_to @personal, notice: 'Personal was successfully updated.' }
+        format.html { redirect_to @personal, notice: 'La actualización fue exitosa.' }
         format.json { render :show, status: :ok, location: @personal }
       else
         format.html { render :edit }

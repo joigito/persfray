@@ -24,9 +24,9 @@
         <td><%= personal.fecing %></td>
         <td><%= personal.domic %></td>
         <td><%= personal.activo %></td>
-        <td><%= link_to 'Show', personal %></td>
-        <td><%= link_to 'Edit', edit_personal_path(personal) %></td>
-        <td><%= link_to 'Destroy', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', personal %>|</td>
+        <td><%= link_to 'Editar', edit_personal_path(personal) %>|</td>
+        <td><%= link_to 'Eliminar', personal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
