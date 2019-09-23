@@ -15,7 +15,30 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-    create_table "movimientos", force: :cascade do |t|
+  create_table "assistances", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.date "fecha_desde"
+    t.date "fecha_hasta"
+    t.string "movito"
+    t.boolean "con_aviso"
+    t.boolean "justificado"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_assistances_on_personal_id"
+  end
+
+  create_table "inasistencia", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.date "fechadesde"
+    t.date "fechahasta"
+    t.string "causa"
+    t.boolean "aviso"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_inasistencia_on_personal_id"
+  end
+
+  create_table "movimientos", force: :cascade do |t|
     t.bigint "personal_id", null: false
     t.date "fecha_desde"
     t.date "fecha_hasta"
