@@ -18,7 +18,7 @@
   <tbody>
     <% @movimientos.each do |movimiento| %>
       <tr>
-        <td><%= movimiento.personal_id %></td>
+        <td><%= movimiento.personal.apeynom %></td>
         <td><%= movimiento.fecha_desde %></td>
         <td><%= movimiento.fecha_hasta %></td>
         <td><%= movimiento.motivo %></td>
@@ -35,3 +35,4 @@
 <br>
 
 <%= link_to 'New Movimiento', new_movimiento_path %>
+<%= link_to 'Personal', personals_path %>
