@@ -24,8 +24,12 @@
   <%= @personal.activo %>
 </p>
 <h4>Licencias del agente</h4>
-<% @personals.movimientos.each do |mov| %>
-  <p> <%= movimiento.fecha_desde %> </p>
+<% @personal.movimientos.each do |movimiento| %>
+  <%= movimiento.fecha_desde %>
+  <%= movimiento.fecha_hasta %>
+  <%= movimiento.motivo %>
+  <%= movimiento.con_aviso %>
+  <%= movimiento.justificado %>   
 <% end %>
 
 <%= link_to 'Edit', edit_personal_path(@personal) %> |

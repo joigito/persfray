@@ -1,5 +1,5 @@
 class Movimiento < ApplicationRecord
-  belongs_to :Personal
+  belongs_to :personal
   validates :fecha_hasta, :fecha_desde, presence: true
 
 end
