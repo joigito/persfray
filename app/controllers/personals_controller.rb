@@ -4,7 +4,12 @@ class PersonalsController < ApplicationController
   # GET /personals
   # GET /personals.json
   def index
-    @personals = Personal.all
+    @personals = Personal.all.order("apeynom ASC")
+    if params[:search]
+      @personals = Personal.search(params[:search]).order('apeynom ASC')
+    else
+      @personals = Personal.all.order('apeynom ASC')
+    end
   end
 
   # GET /personals/1

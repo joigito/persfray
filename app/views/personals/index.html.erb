@@ -1,7 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Personal</h1>
-
+<%= form_tag(personals_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Búsqueda de agente" %>
+<%= submit_tag "Search" %>
+<% end %>
+<% if @personals.present? %>
+  <%= render @personals %>
+<% else %>
+  <p>Agente no encontrado <%= params[:search] %>.</p>
+<% end %>
 <table>
   <thead>
     <tr>
