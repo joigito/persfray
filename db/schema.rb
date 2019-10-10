@@ -27,17 +27,6 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
     t.index ["personal_id"], name: "index_assistances_on_personal_id"
   end
 
-  create_table "inasistencia", force: :cascade do |t|
-    t.bigint "personal_id", null: false
-    t.date "fechadesde"
-    t.date "fechahasta"
-    t.string "causa"
-    t.boolean "aviso"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["personal_id"], name: "index_inasistencia_on_personal_id"
-  end
-
   create_table "movimientos", force: :cascade do |t|
     t.bigint "personal_id", null: false
     t.date "fecha_desde"
@@ -62,6 +51,5 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
   end
 
   add_foreign_key "assistances", "personals"
-  add_foreign_key "inasistencia", "personals"
   add_foreign_key "movimientos", "personals"
 end
