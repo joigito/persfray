@@ -6,7 +6,7 @@
 <%= submit_tag "Search" %>
 <% end %>
 <% if @personals.present? %>
-  <%= render @personals %>
+  
 <% else %>
   <p>Agente no encontrado <%= params[:search] %>.</p>
 <% end %>
