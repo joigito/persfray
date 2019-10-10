@@ -23,14 +23,37 @@
   <strong>Activo:</strong>
   <%= @personal.activo %>
 </p>
+
 <h4>Licencias del agente</h4>
-<% @personal.movimientos.each do |movimiento| %>
-  <%= movimiento.fecha_desde %>
-  <%= movimiento.fecha_hasta %>
-  <%= movimiento.motivo %>
-  <%= movimiento.con_aviso %>
-  <%= movimiento.justificado %>   
-<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Personal</th>
+      <th>Fecha desde</th>
+      <th>Fecha hasta</th>
+      <th>Motivo</th>
+      <th>Con aviso</th>
+      <th>Justificado</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @personal.movimientos.each do |movimiento| %>
+      <tr>
+        <td><%= movimiento.fecha_desde %></td>
+        <td><%= movimiento.fecha_hasta %></td>
+        <td><%= movimiento.motivo %></td>
+        <td><%= movimiento.con_aviso %></td>
+        <td><%= movimiento.justificado %></td>
+        <td><%= link_to 'Show', movimiento %></td>
+        <td><%= link_to 'Edit', edit_movimiento_path(movimiento) %></td>
+        <td><%= link_to 'Destroy', movimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 
 <%= link_to 'Edit', edit_personal_path(@personal) %> |
 <%= link_to 'Back', personals_path %>
