@@ -24,9 +24,9 @@
         <td><%= movimiento.motivo %></td>
         <td><%= movimiento.con_aviso %></td>
         <td><%= movimiento.justificado %></td>
-        <td><%= link_to 'Show', movimiento %></td>
-        <td><%= link_to 'Edit', edit_movimiento_path(movimiento) %></td>
-        <td><%= link_to 'Destroy', movimiento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', movimiento %>|</td>
+        <td><%= link_to 'Editar', edit_movimiento_path(movimiento) %>|</td>
+        <td><%= link_to 'Eliminar', movimiento, method: :delete, data: { confirm: 'Confirma?' } %></td>
       </tr>
     <% end %>
   </tbody>
