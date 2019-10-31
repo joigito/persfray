@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_17_205544) do
+ActiveRecord::Schema.define(version: 2019_10_31_154736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,29 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["personal_id"], name: "index_assistances_on_personal_id"
+  end
+
+  create_table "cargos", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.string "cargo"
+    t.date "desde"
+    t.date "hasta"
+    t.string "curso"
+    t.boolean "activo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_cargos_on_personal_id"
+  end
+
+  create_table "inasistencia", force: :cascade do |t|
+    t.bigint "personal_id", null: false
+    t.date "fechadesde"
+    t.date "fechahasta"
+    t.string "causa"
+    t.boolean "aviso"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["personal_id"], name: "index_inasistencia_on_personal_id"
   end
 
   create_table "movimientos", force: :cascade do |t|
@@ -51,5 +74,7 @@ ActiveRecord::Schema.define(version: 2019_09_17_205544) do
   end
 
   add_foreign_key "assistances", "personals"
+  add_foreign_key "cargos", "personals"
+  add_foreign_key "inasistencia", "personals"
   add_foreign_key "movimientos", "personals"
 end

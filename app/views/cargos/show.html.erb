@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Personal:</strong>
+  <%= @cargo.personal.apeynom %>
+</p>
+
+<p>
+  <strong>Cargo:</strong>
+  <%= @cargo.cargo %>
+</p>
+
+<p>
+  <strong>Desde:</strong>
+  <%= @cargo.desde %>
+</p>
+
+<p>
+  <strong>Hasta:</strong>
+  <%= @cargo.hasta %>
+</p>
+
+<p>
+  <strong>Curso:</strong>
+  <%= @cargo.curso %>
+</p>
+
+<p>
+  <strong>Activo:</strong>
+  <%= @cargo.activo %>
+</p>
+
+<%= link_to 'Edit', edit_cargo_path(@cargo) %> |
+<%= link_to 'Back', cargos_path %>

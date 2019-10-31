@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  personal: one
+  cargo: MyString
+  desde: 2019-10-31
+  hasta: 2019-10-31
+  curso: MyString
+  activo: false
+
+two:
+  personal: two
+  cargo: MyString
+  desde: 2019-10-31
+  hasta: 2019-10-31
+  curso: MyString
+  activo: false

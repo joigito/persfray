@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cargos
   resources :movimientos
   root to: 'personals#index'
   resources :personals

@@ -1,0 +1,18 @@
+
+<%= simple_form_for(@cargo) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.association :personal, :label_method => :apeynom %>
+    <%= f.input :cargo %>
+    <%= f.input :desde %>
+    <%= f.input :hasta %>
+    <%= f.input :curso %>
+    <%= f.input :activo %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

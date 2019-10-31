@@ -8,4 +8,5 @@ class Personal < ApplicationRecord
     where("apeynom ILIKE ?", "%#{search}%")
     #where("content LIKE ?", "%#{search}%")
   end
+  has_many :cargos
 end
